@@ -1,0 +1,12 @@
+{
+  "name": "juanbrgyweb",
+  "version": "1.0.0",
+  "description": "juanbrgyWEB Frontend - PHP, HTML, CSS with Tailwind",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/assets/css/app.css -o ./dist/css/app.css --watch",
+    "build": "npx tailwindcss -i ./src/assets/css/app.css -o ./dist/css/app.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
