@@ -10,10 +10,10 @@ $contentFile = __FILE__;
 
 // Mock Dashboard data
 $stats = [
-    'total_residents'   => ['val' => '1,482', 'icon' => 'user',  'bg' => 'bg-accent-100 text-accent-700', 'desc' => 'Registered residents'],
-    'pending_approvals' => ['val' => '8',     'icon' => 'clip',  'bg' => 'bg-warning-100 text-warning-700', 'desc' => 'Requests waiting review'],
-    'active_cases'      => ['val' => '5',     'icon' => 'alert', 'bg' => 'bg-danger-100 text-danger-700', 'desc' => 'Blotter / incidents reports'],
-    'message_count'     => ['val' => '10',    'icon' => 'mail',  'bg' => 'bg-success-100 text-success-700', 'desc' => 'Announcements posted'],
+    'total_residents'   => ['val' => '1,482', 'color' => 'text-accent-600',  'desc' => 'Registered residents'],
+    'pending_approvals' => ['val' => '8',     'color' => 'text-warning-600',  'desc' => 'Requests waiting review'],
+    'active_cases'      => ['val' => '5',     'color' => 'text-danger-600',   'desc' => 'Blotter / incidents reports'],
+    'message_count'     => ['val' => '10',    'color' => 'text-success-600',  'desc' => 'Announcements posted'],
 ];
 
 $messages = [
@@ -35,28 +35,118 @@ if (!isset($templateRendered)) {
 }
 ?>
 
-<!-- Stat Cards -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-    <?php foreach ($stats as $key => $data): ?>
-        <div class="stat-card flex items-center gap-4 bg-white border border-slate-200 rounded-lg p-4">
-            <div class="stat-card-icon <?= $data['bg'] ?> p-3 rounded-lg">
-                <?php if ($data['icon'] === 'user'): ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                <?php elseif ($data['icon'] === 'clip'): ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
-                <?php elseif ($data['icon'] === 'alert'): ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                <?php else: ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <?php endif; ?>
+<!-- Population Overview: Stat Cards + Pie Chart -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+    <!-- Stat Cards Column -->
+    <div class="lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+        <?php foreach ($stats as $key => $data): ?>
+            <div class="stat-card">
+                <div class="stat-card-value <?= $data['color'] ?>"><?= e($data['val']) ?></div>
+                <div class="stat-card-label"><?= e($data['desc']) ?></div>
             </div>
-            <div>
-                <div class="stat-card-value text-xl font-bold"><?= e($data['val']) ?></div>
-                <div class="stat-card-label text-xs text-slate-500 font-medium"><?= e($data['desc']) ?></div>
-            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <!-- Pie Chart Column -->
+    <div class="lg:col-span-2 bg-white border border-slate-200 rounded-lg p-5">
+        <h2 class="text-base font-semibold text-slate-800 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gov-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+            Population Overview
+        </h2>
+        <div style="position: relative; max-width: 420px; margin: 0 auto; padding: 10px 0;">
+            <canvas id="dashboardPieChart"></canvas>
         </div>
-    <?php endforeach; ?>
+    </div>
 </div>
+
+<!-- Chart.js CDN + Pie Chart Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('dashboardPieChart').getContext('2d');
+
+    const data = {
+        labels: [
+            'Registered Residents',
+            'Pending Approvals',
+            'Active Cases',
+            'Announcements Posted'
+        ],
+        datasets: [{
+            data: [
+                <?= (int) str_replace(',', '', $stats['total_residents']['val']) ?>,
+                <?= (int) str_replace(',', '', $stats['pending_approvals']['val']) ?>,
+                <?= (int) str_replace(',', '', $stats['active_cases']['val']) ?>,
+                <?= (int) str_replace(',', '', $stats['message_count']['val']) ?>
+            ],
+            backgroundColor: [
+                'rgba(59, 130, 246, 0.85)',
+                'rgba(245, 158, 11, 0.85)',
+                'rgba(239, 68, 68, 0.85)',
+                'rgba(16, 185, 129, 0.85)'
+            ],
+            borderColor: [
+                'rgba(59, 130, 246, 1)',
+                'rgba(245, 158, 11, 1)',
+                'rgba(239, 68, 68, 1)',
+                'rgba(16, 185, 129, 1)'
+            ],
+            borderWidth: 2,
+            hoverOffset: 18,
+            borderRadius: 4
+        }]
+    };
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            cutout: '55%',
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true,
+                        pointStyle: 'rectRounded',
+                        font: {
+                            family: "'Inter', sans-serif",
+                            size: 12,
+                            weight: '500'
+                        },
+                        color: '#475569'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                    titleFont: { family: "'Inter', sans-serif", size: 13, weight: '600' },
+                    bodyFont: { family: "'Inter', sans-serif", size: 12 },
+                    padding: 12,
+                    cornerRadius: 8,
+                    displayColors: true,
+                    boxPadding: 6,
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.parsed;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const pct = ((value / total) * 100).toFixed(1);
+                            return ' ' + context.label + ': ' + value.toLocaleString() + ' (' + pct + '%)';
+                        }
+                    }
+                }
+            },
+            animation: {
+                animateRotate: true,
+                animateScale: true,
+                duration: 800,
+                easing: 'easeOutQuart'
+            }
+        }
+    });
+});
+</script>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     <!-- Message Board -->
