@@ -352,7 +352,7 @@
 /* ----- Cards & Stat Boxes ----- */
 @layer components {
     .stat-card {
-        @apply bg-white border border-slate-200 rounded p-3.5;
+        @apply bg-white border border-slate-200 rounded px-3.5 py-5 flex flex-col justify-center;
     }
 
     .stat-card-value {

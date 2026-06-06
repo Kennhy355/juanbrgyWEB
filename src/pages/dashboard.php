@@ -38,9 +38,9 @@ if (!isset($templateRendered)) {
 <!-- Population Overview: Stat Cards + Pie Chart -->
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
     <!-- Stat Cards Column -->
-    <div class="lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+    <div class="lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 sm:grid-rows-2 lg:grid-rows-4 gap-3 lg:h-[calc(100%-12px)]">
         <?php foreach ($stats as $key => $data): ?>
-            <div class="stat-card">
+            <div class="stat-card h-full">
                 <div class="stat-card-value <?= $data['color'] ?>"><?= e($data['val']) ?></div>
                 <div class="stat-card-label"><?= e($data['desc']) ?></div>
             </div>
