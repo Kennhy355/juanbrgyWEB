@@ -11,7 +11,7 @@ $templateRendered = true;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= asset_url('dist/css/app.css') ?>">
+    <link rel="stylesheet" href="<?= asset_url('dist/css/app.css') ?>?v=<?= time() ?>">
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
 
@@ -70,6 +70,6 @@ $templateRendered = true;
         <?php include __DIR__ . '/../components/footer.php'; ?>
     </main>
 
-    <script src="<?= asset_url('src/assets/js/app.js') ?>" defer></script>
+    <script src="<?= asset_url('src/assets/js/app.js') ?>?v=<?= time() ?>" defer></script>
 </body>
 </html>

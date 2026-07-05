@@ -103,6 +103,7 @@
         @apply border-t border-slate-700 mx-3 my-1;
     }
 
+
     
     .main-content {
         @apply mt-14 min-h-[calc(100vh-3.5rem)] p-6;
@@ -450,3 +451,53 @@
         @apply text-xs text-slate-400 text-center py-3 border-t border-slate-200 bg-white mt-auto;
     }
 }
+
+
+/* ── Sidebar collapsible toggle (outside @layer to prevent purging) ── */
+.sidebar-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #94a3b8;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-left: 2px solid #3b82f6;
+    cursor: pointer;
+    border-radius: 0 0.25rem 0.25rem 0;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-toggle-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.sidebar-toggle[aria-expanded="false"] .sidebar-toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.sidebar-links-group {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.25s ease;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.sidebar-links-group.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
