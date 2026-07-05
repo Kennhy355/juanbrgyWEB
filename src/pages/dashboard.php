@@ -101,17 +101,18 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             responsive: true,
             maintainAspectRatio: true,
+            aspectRatio: 1,
             cutout: '55%',
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        padding: 20,
+                        padding: 12,
                         usePointStyle: true,
                         pointStyle: 'rectRounded',
                         font: {
                             family: "'Inter', sans-serif",
-                            size: 12,
+                            size: 11,
                             weight: '500'
                         },
                         color: '#475569'
