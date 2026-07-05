@@ -1,7 +1,5 @@
 <?php
-/**
- * TODO List Page
- */
+
 
 $pageTitle = 'My Task List';
 $pageSubtitle = 'Organize personal and departmental administrative tasks';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock list of tasks
+
 $tasks = [
     ['id' => 1, 'task' => 'Verify voter registration listings for Purok 2', 'priority' => 'High', 'due' => '2026-06-05', 'status' => 'Pending'],
     ['id' => 2, 'task' => 'Compile and submit Q2 barangay health demographics report', 'priority' => 'Medium', 'due' => '2026-06-10', 'status' => 'Pending'],
@@ -45,7 +43,7 @@ if (!isset($templateRendered)) {
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-    <!-- Add Task Form -->
+    
     <div class="bg-white border border-slate-200 rounded-lg p-5 h-fit">
         <h3 class="text-sm font-semibold text-slate-800 uppercase tracking-wide border-b border-slate-100 pb-2 mb-4">Add Task Card</h3>
         <form action="<?= page_url('/system/todo') ?>" method="POST" class="space-y-4">
@@ -76,7 +74,7 @@ if (!isset($templateRendered)) {
         </form>
     </div>
 
-    <!-- Active tasks list -->
+    
     <div class="lg:col-span-2">
         <div class="data-table-wrapper">
             <div class="data-table-toolbar flex justify-between items-center p-3 bg-slate-50 border-b border-slate-200">

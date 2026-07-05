@@ -1,7 +1,5 @@
 <?php
-/**
- * Admin Request Queue Rules Page
- */
+
 
 $pageTitle = 'Admin Request Queue Rules';
 $pageSubtitle = 'Configure authorization workflows and routing protocols for official barangay documents';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock rules list
+
 $rules = [
     ['id' => 'RUL-01', 'name' => 'Barangay Clearance Auto-Route', 'entity' => 'Clearance Request', 'role' => 'Barangay Captain / Secretary', 'order' => 1, 'status' => 'Active'],
     ['id' => 'RUL-02', 'name' => 'Certificate of Indigency Validation', 'entity' => 'Indigency Request', 'role' => 'Social Worker / Secretary', 'order' => 1, 'status' => 'Active'],
@@ -39,7 +37,7 @@ if (!isset($templateRendered)) {
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-    <!-- Add/Edit Rule Form -->
+    
     <div class="bg-white border border-slate-200 rounded-lg p-5">
         <h3 class="text-sm font-semibold text-slate-800 uppercase tracking-wide border-b border-slate-100 pb-2 mb-4">Set-up Approval Rule</h3>
         <form action="<?= page_url('/approvals/rules') ?>" method="POST" class="space-y-4">
@@ -88,7 +86,7 @@ if (!isset($templateRendered)) {
         </form>
     </div>
 
-    <!-- Active Rules List -->
+    
     <div class="lg:col-span-2 space-y-6">
         <div class="data-table-wrapper">
             <div class="data-table-toolbar flex justify-between items-center p-3 bg-slate-50 border-b border-slate-200">
@@ -132,7 +130,7 @@ if (!isset($templateRendered)) {
             </table>
         </div>
         
-        <!-- Filtered Proof List -->
+        
         <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
             <h4 class="text-xs font-semibold text-slate-700 uppercase tracking-wide mb-2 flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gov-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>

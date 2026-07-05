@@ -1,7 +1,5 @@
 <?php
-/**
- * Religion Reference List Page
- */
+
 
 $pageTitle = 'Religion Master File';
 $pageSubtitle = 'Manage registered religious affiliation lookup values for resident profiles';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock religion list
+
 $religions = [
     ['code' => 'REL-RC', 'name' => 'Roman Catholic', 'status' => 'Active'],
     ['code' => 'REL-INC', 'name' => 'Iglesia ni Cristo', 'status' => 'Active'],
@@ -20,7 +18,7 @@ $religions = [
     ['code' => 'REL-EVG', 'name' => 'Evangelical Christian', 'status' => 'Active'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/religion/edit') ?>" class="btn btn-primary">

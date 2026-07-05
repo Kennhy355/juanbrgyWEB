@@ -1,7 +1,5 @@
 <?php
-/**
- * Municipality Reference List Page
- */
+
 
 $pageTitle = 'Municipality Master File';
 $pageSubtitle = 'Manage registered cities and municipalities for residential address lookup';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock list
+
 $municipalities = [
     ['code' => 'MUN-MNL', 'name' => 'Manila', 'province' => 'Metro Manila', 'zip' => '1000', 'status' => 'Active'],
     ['code' => 'MUN-QC', 'name' => 'Quezon City', 'province' => 'Metro Manila', 'zip' => '1100', 'status' => 'Active'],
@@ -19,7 +17,7 @@ $municipalities = [
     ['code' => 'MUN-DVO', 'name' => 'Davao City', 'province' => 'Davao del Sur', 'zip' => '8000', 'status' => 'Active'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/municipality/edit') ?>" class="btn btn-primary">

@@ -15,16 +15,16 @@ $templateRendered = true;
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
 
-    <!-- Top Navigation -->
+    
     <?php include __DIR__ . '/../components/header.php'; ?>
 
-    <!-- Left Sidebar -->
+    
     <?php include __DIR__ . '/../components/sidebar.php'; ?>
 
-    <!-- Main Content Area -->
+    
     <main class="main-content flex flex-col justify-between">
         <div class="flex-grow">
-            <!-- Breadcrumbs / Page Header -->
+            
             <div class="mb-4">
                 <?php if (isset($breadcrumbs) && is_array($breadcrumbs)): ?>
                     <nav class="breadcrumb">
@@ -55,7 +55,7 @@ $templateRendered = true;
                 </div>
             </div>
 
-            <!-- Page Specific Content -->
+            
             <?php if (isset($contentFile) && file_exists($contentFile)): ?>
                 <?php include $contentFile; ?>
             <?php else: ?>
@@ -66,7 +66,7 @@ $templateRendered = true;
             <?php endif; ?>
         </div>
 
-        <!-- Footer -->
+        
         <?php include __DIR__ . '/../components/footer.php'; ?>
     </main>
 

@@ -1,7 +1,5 @@
 <?php
-/**
- * Resident List Page
- */
+
 
 $pageTitle = 'Resident Master File List';
 $pageSubtitle = 'Search, filter, and manage all registered residents in Barangay Juan';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock resident data
+
 $residents = [
     ['id' => 'RES-2026-0001', 'first_name' => 'Maria', 'last_name' => 'Santos', 'middle_name' => 'A.', 'gender' => 'Female', 'purok' => 'Purok 1', 'contact' => '0917-123-4567', 'status' => 'Active', 'age' => 28],
     ['id' => 'RES-2026-0002', 'first_name' => 'Juan', 'last_name' => 'Dela Cruz', 'middle_name' => 'B.', 'gender' => 'Male', 'purok' => 'Purok 3', 'contact' => '0918-987-6543', 'status' => 'Active', 'age' => 35],
@@ -25,7 +23,7 @@ $residents = [
     ['id' => 'RES-2026-0010', 'first_name' => 'Leonora', 'last_name' => 'San Agustin', 'middle_name' => 'J.', 'gender' => 'Female', 'purok' => 'Purok 5', 'contact' => '0917-444-5555', 'status' => 'Active', 'age' => 31],
 ];
 
-// Handle search / filters
+
 $search = trim($_GET['search'] ?? '');
 $filterPurok = trim($_GET['purok'] ?? '');
 $filterStatus = trim($_GET['status'] ?? '');
@@ -47,7 +45,7 @@ foreach ($residents as $res) {
     $filteredResidents[] = $res;
 }
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/residents/create') ?>" class="btn btn-primary">
@@ -64,7 +62,7 @@ if (!isset($templateRendered)) {
 ?>
 
 <div class="data-table-wrapper">
-    <!-- Toolbar / Filter Bar -->
+    
     <form action="<?= page_url('/residents') ?>" method="GET" class="data-table-toolbar flex flex-wrap items-center justify-between gap-3 p-3 bg-slate-50 border-b border-slate-200">
         <div class="flex items-center gap-2">
             <div class="search-wrapper">
@@ -97,7 +95,7 @@ if (!isset($templateRendered)) {
         </div>
     </form>
 
-    <!-- Data Table -->
+    
     <table class="data-table">
         <thead>
             <tr>
@@ -146,7 +144,7 @@ if (!isset($templateRendered)) {
         </tbody>
     </table>
 
-    <!-- Pagination Footer -->
+    
     <div class="data-table-footer">
         <div>
             Page 1 of 1

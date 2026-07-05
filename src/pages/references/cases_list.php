@@ -1,7 +1,5 @@
 <?php
-/**
- * Cases / Type of Incident Reference List Page
- */
+
 
 $pageTitle = 'Cases & Incident Types Master';
 $pageSubtitle = 'Manage categories of incidents, dispute models, and peace & order desk categories';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock incident types
+
 $incidents = [
     ['code' => 'INC-THEFT', 'name' => 'Theft / Robbery', 'severity' => 'Medium', 'dept' => 'KP Desk (Katarungang Pambarangay)', 'status' => 'Active'],
     ['code' => 'INC-PHYS', 'name' => 'Physical Assault / Injury', 'severity' => 'High', 'dept' => 'Barangay Police (Tanod)', 'status' => 'Active'],
@@ -20,7 +18,7 @@ $incidents = [
     ['code' => 'INC-DOMS', 'name' => 'Domestic Violence / Family Conflict', 'severity' => 'High', 'dept' => 'VAWC Desk Officer', 'status' => 'Active'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/cases/edit') ?>" class="btn btn-primary">

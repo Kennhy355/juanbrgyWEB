@@ -1,7 +1,5 @@
 <?php
-/**
- * Change Password Page
- */
+
 
 $pageTitle = 'Change Password';
 $pageSubtitle = 'Update your security credentials';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock message handling
+
 $successMsg = '';
 $errorMsg = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

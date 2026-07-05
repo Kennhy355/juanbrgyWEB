@@ -1,7 +1,5 @@
 <?php
-/**
- * Barangay Master File List Page
- */
+
 
 $pageTitle = 'Barangay Master File';
 $pageSubtitle = 'Manage barangay information details and Sangguniang Barangay council positions';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock barangay profile data
+
 $barangay = [
     'code' => 'BRGY-001',
     'name' => 'Barangay Juan',
@@ -22,7 +20,7 @@ $barangay = [
     'captain' => 'Hon. Jose Rizal',
 ];
 
-// Mock Sangguniang Barangay council entries
+
 $council = [
     ['name' => 'Hon. Jose Rizal', 'position' => 'Barangay Captain', 'term' => '2023 - 2026', 'contact' => '0917-111-2222', 'status' => 'Active'],
     ['name' => 'Hon. Andres Bonifacio', 'position' => 'Kagawad (Peace & Order)', 'term' => '2023 - 2026', 'contact' => '0918-333-4444', 'status' => 'Active'],
@@ -32,7 +30,7 @@ $council = [
     ['name' => 'Hon. Emilio Jacinto', 'position' => 'SK Chairman', 'term' => '2023 - 2026', 'contact' => '0922-222-3333', 'status' => 'Active'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/barangay/edit') ?>" class="btn btn-primary">
@@ -50,7 +48,7 @@ if (!isset($templateRendered)) {
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-    <!-- Barangay Details Card -->
+    
     <div class="bg-white border border-slate-200 rounded-lg p-5 h-fit">
         <h3 class="font-semibold text-slate-700 uppercase tracking-wide border-b border-slate-100 pb-2 mb-4">Official Information</h3>
         <div class="space-y-3.5 text-sm">
@@ -81,7 +79,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Sangguniang Barangay Council Members List -->
+    
     <div class="lg:col-span-2">
         <div class="data-table-wrapper">
             <div class="data-table-toolbar flex justify-between items-center p-3 bg-slate-50 border-b border-slate-200">

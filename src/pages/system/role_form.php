@@ -1,7 +1,5 @@
 <?php
-/**
- * User Role Maintenance Form Page
- */
+
 
 $id = trim($_GET['id'] ?? '');
 $isEdit = $id !== '';
@@ -15,7 +13,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock configuration settings
+
 $role = [
     'name' => '',
     'desc' => '',
@@ -54,7 +52,7 @@ if (!isset($templateRendered)) {
 
 <form action="<?= page_url($isEdit ? '/system/roles/edit?id=' . e($id) : '/system/roles/edit') ?>" method="POST" class="space-y-6">
 
-    <!-- Metadata settings -->
+    
     <div class="form-section max-w-2xl">
         <h2 class="form-section-title">Access Role Information</h2>
         <div class="form-group">
@@ -67,7 +65,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Permissions checklist matrix grid -->
+    
     <div class="form-section max-w-4xl">
         <h2 class="form-section-title">Module Permissions Matrix</h2>
         <div class="overflow-x-auto border border-slate-200 rounded">
@@ -147,7 +145,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Actions -->
+    
     <div class="form-actions bg-white border border-slate-200 rounded-lg p-4 flex items-center justify-end gap-2 max-w-4xl">
         <button type="submit" class="btn btn-primary">Save Role Configuration</button>
         <a href="<?= page_url('/system/roles') ?>" class="btn btn-secondary">Cancel</a>

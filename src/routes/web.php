@@ -1,9 +1,5 @@
 <?php
-/**
- * Router
- * 
- * Simple PHP router that maps URLs to page files.
- */
+
 
 function get_base_path(): string
 {
@@ -12,15 +8,13 @@ function get_base_path(): string
     return rtrim($base, '/');
 }
 
-/**
- * Get the current request URI path, relative to the base path.
- */
+
 function get_route(): string
 {
     $uri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $base = get_base_path();
 
-    // Strip the base path prefix so "/juanbrgyWEB/about" becomes "/about"
+    
     if ($base && str_starts_with($uri, $base)) {
         $uri = substr($uri, strlen($base));
     }
@@ -28,37 +22,35 @@ function get_route(): string
     return rtrim($uri, '/') ?: '/';
 }
 
-/**
- * Define route-to-file mappings.
- */
+
 function get_routes(): array
 {
     return [
-        // Auth
+        
         '/auth/login'                   => __DIR__ . '/../pages/auth/login.php',
         '/auth/change-password'         => __DIR__ . '/../pages/auth/change_password.php',
 
-        // Dashboard
+        
         '/'                             => __DIR__ . '/../pages/dashboard.php',
 
-        // Resident Management
+        
         '/residents'                    => __DIR__ . '/../pages/residents/list.php',
         '/residents/create'             => __DIR__ . '/../pages/residents/form.php',
         '/residents/edit'               => __DIR__ . '/../pages/residents/form.php',
         '/residents/view'               => __DIR__ . '/../pages/residents/view.php',
 
-        // Reports & Queries
+        
         '/reports'                      => __DIR__ . '/../pages/reports/index.php',
         '/reports/custom'               => __DIR__ . '/../pages/reports/custom_list.php',
         '/reports/custom/create'        => __DIR__ . '/../pages/reports/custom_form.php',
         '/reports/custom/edit'          => __DIR__ . '/../pages/reports/custom_form.php',
         '/reports/adhoc'                => __DIR__ . '/../pages/reports/adhoc.php',
 
-        // Approvals
+        
         '/approvals/rules'              => __DIR__ . '/../pages/approvals/queue_rules.php',
         '/approvals/authorization'      => __DIR__ . '/../pages/approvals/authorization.php',
 
-        // References (List & Form maps)
+        
         '/references/barangay'          => __DIR__ . '/../pages/references/barangay_list.php',
         '/references/barangay/edit'     => __DIR__ . '/../pages/references/barangay_form.php',
 
@@ -86,7 +78,7 @@ function get_routes(): array
         '/references/communication'      => __DIR__ . '/../pages/references/communication_list.php',
         '/references/communication/edit' => __DIR__ . '/../pages/references/communication_form.php',
 
-        // System Settings
+        
         '/system/users'                 => __DIR__ . '/../pages/system/users.php',
         '/system/users/edit'            => __DIR__ . '/../pages/system/user_form.php',
         '/system/roles'                 => __DIR__ . '/../pages/system/roles.php',
@@ -96,9 +88,7 @@ function get_routes(): array
     ];
 }
 
-/**
- * Dispatch the current request to the appropriate page.
- */
+
 function dispatch(): void
 {
     $route  = get_route();
@@ -108,15 +98,15 @@ function dispatch(): void
         require $routes[$route];
     } else {
         http_response_code(404);
-        // Show styled 404
+        
         $pageTitle = '404 - Page Not Found';
         $pageSubtitle = 'The requested page does not exist or has been moved.';
         $breadcrumbs = ['Error' => ''];
         
         $contentFile = __DIR__ . '/../pages/errors/404.php';
-        // Make sure error page file exists or we render simple text
+        
         if (!file_exists($contentFile)) {
-            // Create a quick fallback content
+            
             if (!is_dir(dirname($contentFile))) {
                 mkdir(dirname($contentFile), 0777, true);
             }

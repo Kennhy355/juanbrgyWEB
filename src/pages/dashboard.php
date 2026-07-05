@@ -1,14 +1,12 @@
 <?php
-/**
- * Dashboard Page
- */
+
 
 $pageTitle = 'Dashboard';
 $pageSubtitle = 'Welcome to the Barangay Juan Management Information System';
-$breadcrumbs = []; // Root has no breadcrumbs
+$breadcrumbs = []; 
 $contentFile = __FILE__;
 
-// Mock Dashboard data
+
 $stats = [
     'total_residents'   => ['val' => '1,482', 'color' => 'text-accent-600',  'desc' => 'Registered residents'],
     'pending_approvals' => ['val' => '8',     'color' => 'text-warning-600',  'desc' => 'Requests waiting review'],
@@ -35,9 +33,9 @@ if (!isset($templateRendered)) {
 }
 ?>
 
-<!-- Population Overview: Stat Cards + Pie Chart -->
+
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-    <!-- Stat Cards Column -->
+    
     <div class="lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 sm:grid-rows-2 lg:grid-rows-4 gap-3 lg:h-[calc(100%-12px)]">
         <?php foreach ($stats as $key => $data): ?>
             <div class="stat-card h-full">
@@ -47,7 +45,7 @@ if (!isset($templateRendered)) {
         <?php endforeach; ?>
     </div>
 
-    <!-- Pie Chart Column -->
+    
     <div class="lg:col-span-2 bg-white border border-slate-200 rounded-lg p-5">
         <h2 class="text-base font-semibold text-slate-800 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gov-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
@@ -59,7 +57,7 @@ if (!isset($templateRendered)) {
     </div>
 </div>
 
-<!-- Chart.js CDN + Pie Chart Script -->
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -149,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    <!-- Message Board -->
+    
     <div class="lg:col-span-2 bg-white border border-slate-200 rounded-lg p-5">
         <h2 class="text-base font-semibold text-slate-800 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gov-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -187,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 
-    <!-- Quick Tools & Actions -->
+    
     <div class="space-y-6">
         <div class="bg-white border border-slate-200 rounded-lg p-5">
             <h2 class="text-base font-semibold text-slate-800 mb-4 pb-2 border-b border-slate-100">Quick Actions</h2>

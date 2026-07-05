@@ -1,9 +1,7 @@
 <?php
-/**
- * Resident Create/Edit Form Page
- */
 
-// Simple routing identification for Edit vs Create
+
+
 $id = trim($_GET['id'] ?? '');
 $isEdit = $id !== '';
 
@@ -15,7 +13,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock current resident data for edit state
+
 $resident = [
     'first_name' => '',
     'last_name' => '',
@@ -37,7 +35,7 @@ $resident = [
 ];
 
 if ($isEdit) {
-    // Fill mock details matching the ID
+    
     $resident = [
         'first_name' => 'Maria',
         'last_name' => 'Santos',
@@ -79,7 +77,7 @@ if (!isset($templateRendered)) {
 
 <form action="<?= page_url($isEdit ? '/residents/edit?id=' . e($id) : '/residents/create') ?>" method="POST" class="space-y-6">
 
-    <!-- Section 1: Personal Details -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Personal Details</h2>
         <div class="form-row">
@@ -137,7 +135,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Section 2: Address Information -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Address Details</h2>
         <div class="form-row">
@@ -162,7 +160,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Section 3: Contact & Communication Details -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Communication Details</h2>
         <div class="form-row">
@@ -186,7 +184,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Section 4: System Fields -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Status & Remarks</h2>
         <div class="form-row">
@@ -204,7 +202,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Actions -->
+    
     <div class="form-actions bg-white border border-slate-200 rounded-lg p-4 flex items-center justify-end gap-2">
         <button type="submit" class="btn btn-primary"><?= $isEdit ? 'Save Changes' : 'Register Resident' ?></button>
         <a href="<?= page_url('/residents') ?>" class="btn btn-secondary">Cancel</a>

@@ -1,7 +1,5 @@
 <?php
-/**
- * State / Province Reference List Page
- */
+
 
 $pageTitle = 'State / Province Master File';
 $pageSubtitle = 'Manage registered provinces and administrative states for address verification';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock list
+
 $provinces = [
     ['code' => 'PROV-METRO', 'name' => 'Metro Manila', 'region' => 'NCR', 'status' => 'Active'],
     ['code' => 'PROV-CEB', 'name' => 'Cebu', 'region' => 'Region VII', 'status' => 'Active'],
@@ -19,7 +17,7 @@ $provinces = [
     ['code' => 'PROV-CAV', 'name' => 'Cavite', 'region' => 'Region IV-A', 'status' => 'Active'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/state/edit') ?>" class="btn btn-primary">

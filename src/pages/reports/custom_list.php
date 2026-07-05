@@ -1,7 +1,5 @@
 <?php
-/**
- * Customized Report Menu List Page
- */
+
 
 $pageTitle = 'Customized Report Menu List';
 $pageSubtitle = 'Create, update, and generate custom-made report query templates';
@@ -11,14 +9,14 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock custom templates
+
 $customReports = [
     ['id' => 1, 'name' => 'Active Male Voters in Purok 1', 'desc' => 'Filtered query showing male residents aged 18+ in Purok 1.', 'created_by' => 'Admin Jose', 'status' => 'Active'],
     ['id' => 2, 'name' => 'Female Senior Citizens Contact List', 'desc' => 'Retrieves phone numbers of women aged 60+ for healthcare reminders.', 'created_by' => 'Sec. Ramos', 'status' => 'Active'],
     ['id' => 3, 'name' => 'Incident Reports - Purok 3 (Closed)', 'desc' => 'Logs closed incidents/blotter reports specifically from Zone 3.', 'created_by' => 'Tanod Officer', 'status' => 'Inactive'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/reports/custom/create') ?>" class="btn btn-primary">

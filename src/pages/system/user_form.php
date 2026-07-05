@@ -1,7 +1,5 @@
 <?php
-/**
- * User Maintenance Form Page
- */
+
 
 $id = trim($_GET['id'] ?? '');
 $isEdit = $id !== '';
@@ -15,7 +13,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock configuration settings
+
 $userAcc = [
     'username' => '',
     'name' => '',
@@ -89,12 +87,12 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Password change warning warning -->
+    
     <div class="form-group bg-slate-50 border border-slate-200 rounded p-3 text-xs text-slate-500">
         <?= $isEdit ? 'Leave password fields blank to preserve the current administrative login credential credentials.' : 'New accounts default to username as the starter temporary password.' ?>
     </div>
 
-    <!-- Actions -->
+    
     <div class="form-actions pt-4 mt-4 border-t border-slate-100 flex items-center justify-end gap-2">
         <button type="submit" class="btn btn-primary">Save User settings</button>
         <a href="<?= page_url('/system/users') ?>" class="btn btn-secondary">Cancel</a>

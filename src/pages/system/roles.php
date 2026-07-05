@@ -1,7 +1,5 @@
 <?php
-/**
- * User Role Maintenance Page
- */
+
 
 $pageTitle = 'User Role Maintenance';
 $pageSubtitle = 'Create, update, and configure access permissions and security levels for system roles';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock roles list
+
 $roles = [
     ['id' => 1, 'name' => 'Administrator', 'desc' => 'Full access to all system directories, configurations, and reference tables.', 'users_count' => 1],
     ['id' => 2, 'name' => 'Secretary Desk Officer', 'desc' => 'Can manage residents, generate reports, approve documents, and edit lookups.', 'users_count' => 1],
@@ -19,7 +17,7 @@ $roles = [
     ['id' => 4, 'name' => 'Read-Only Viewer', 'desc' => 'Can only view data. No creation, modification, or deletion rights.', 'users_count' => 1],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/system/roles/edit') ?>" class="btn btn-primary">

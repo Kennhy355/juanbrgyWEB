@@ -1,7 +1,5 @@
 <?php
-/**
- * Admin Master File List Page
- */
+
 
 $pageTitle = 'Admin Master File';
 $pageSubtitle = 'Manage system administrators, access credentials, and department assignments';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock admin list
+
 $admins = [
     ['code' => 'ADM-01', 'name' => 'Jose Rizal', 'role' => 'Super Administrator', 'dept' => 'Office of the Captain', 'email' => 'jose.rizal@juanbrgy.gov.ph', 'status' => 'Active'],
     ['code' => 'ADM-02', 'name' => 'Andres Bonifacio', 'role' => 'Officer-in-Charge', 'dept' => 'Peace & Order Desk', 'email' => 'andres.b@juanbrgy.gov.ph', 'status' => 'Active'],
@@ -19,7 +17,7 @@ $admins = [
     ['code' => 'ADM-04', 'name' => 'Emilio Jacinto', 'role' => 'Support Staff', 'dept' => 'SK Youth Council Desk', 'email' => 'emilio.j@juanbrgy.gov.ph', 'status' => 'Inactive'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/admin/edit') ?>" class="btn btn-primary">

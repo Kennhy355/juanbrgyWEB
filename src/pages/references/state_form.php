@@ -1,7 +1,5 @@
 <?php
-/**
- * State / Province Reference Form Page
- */
+
 
 $code = trim($_GET['code'] ?? '');
 $isEdit = $code !== '';
@@ -15,7 +13,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock configuration settings
+
 $province = [
     'code' => '',
     'name' => '',
@@ -76,7 +74,7 @@ if (!isset($templateRendered)) {
         </select>
     </div>
 
-    <!-- Actions -->
+    
     <div class="form-actions pt-4 mt-4 border-t border-slate-100 flex items-center justify-end gap-2">
         <button type="submit" class="btn btn-primary">Save Province</button>
         <a href="<?= page_url('/references/state') ?>" class="btn btn-secondary">Cancel</a>

@@ -1,7 +1,5 @@
 <?php
-/**
- * Top Navigation Bar
- */
+
 $user = current_user();
 ?>
 <header class="topnav">

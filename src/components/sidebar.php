@@ -1,14 +1,9 @@
 <?php
-/**
- * Sidebar Navigation
- * 
- * Full module navigation for the barangay management system.
- * Uses $currentPage variable set by each page to highlight the active link.
- */
+
 ?>
 <aside class="sidebar scrollbar-thin">
 
-    <!-- Dashboard -->
+    
     <div class="sidebar-section">
         <a href="<?= page_url('/') ?>" class="sidebar-link <?= active_class('/') ?>">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -18,7 +13,7 @@
 
     <div class="sidebar-divider"></div>
 
-    <!-- Resident Management -->
+    
     <div class="sidebar-section">
         <div class="sidebar-heading">Resident Management</div>
         <a href="<?= page_url('/residents') ?>" class="sidebar-link <?= active_class('/residents') ?>">
@@ -33,7 +28,7 @@
 
     <div class="sidebar-divider"></div>
 
-    <!-- Reports & Queries -->
+    
     <div class="sidebar-section">
         <div class="sidebar-heading">Reports & Queries</div>
         <a href="<?= page_url('/reports') ?>" class="sidebar-link <?= active_class('/reports') ?>">
@@ -52,7 +47,7 @@
 
     <div class="sidebar-divider"></div>
 
-    <!-- Approvals -->
+    
     <div class="sidebar-section">
         <div class="sidebar-heading">Approvals</div>
         <a href="<?= page_url('/approvals/rules') ?>" class="sidebar-link <?= active_class('/approvals/rules') ?>">
@@ -67,7 +62,7 @@
 
     <div class="sidebar-divider"></div>
 
-    <!-- Reference Tables -->
+    
     <div class="sidebar-section">
         <div class="sidebar-heading">Reference Tables</div>
         <a href="<?= page_url('/references/barangay') ?>" class="sidebar-link <?= active_class('/references/barangay') ?>">
@@ -110,7 +105,7 @@
 
     <div class="sidebar-divider"></div>
 
-    <!-- System -->
+    
     <div class="sidebar-section">
         <div class="sidebar-heading">System</div>
         <a href="<?= page_url('/system/users') ?>" class="sidebar-link <?= active_class('/system/users') ?>">

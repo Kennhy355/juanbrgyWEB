@@ -1,7 +1,5 @@
 <?php
-/**
- * System-wide Options Page
- */
+
 
 $pageTitle = 'System-wide Options';
 $pageSubtitle = 'Configure global settings, soft-switches, and notification parameters for the application';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock current option state
+
 $options = [
     'app_name' => 'Barangay Juan MIS',
     'allow_voter_edit' => 'yes',
@@ -42,7 +40,7 @@ if (!isset($templateRendered)) {
 
 <form action="<?= page_url('/system/options') ?>" method="POST" class="space-y-6 max-w-3xl">
 
-    <!-- Group 1: General Settings -->
+    
     <div class="form-section">
         <h2 class="form-section-title">General Platform Settings</h2>
         <div class="form-group">
@@ -57,7 +55,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Group 2: Document & Registry Toggles -->
+    
     <div class="form-section text-sm space-y-4">
         <h2 class="form-section-title">Document & Resident File Settings</h2>
         
@@ -78,7 +76,7 @@ if (!isset($templateRendered)) {
         </label>
     </div>
 
-    <!-- Group 3: Automated Notifications Channels -->
+    
     <div class="form-section text-sm space-y-4">
         <h2 class="form-section-title">Delivery Channels (Notification soft-switches)</h2>
         
@@ -99,7 +97,7 @@ if (!isset($templateRendered)) {
         </label>
     </div>
 
-    <!-- Actions -->
+    
     <div class="form-actions bg-white border border-slate-200 rounded-lg p-4 flex items-center justify-end gap-2">
         <button type="submit" class="btn btn-primary">Save System Config</button>
         <a href="<?= page_url('/') ?>" class="btn btn-secondary">Cancel</a>

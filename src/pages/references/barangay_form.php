@@ -1,7 +1,5 @@
 <?php
-/**
- * Barangay Master File Set-up Form Page
- */
+
 
 $pageTitle = 'Configure Barangay Master Details';
 $pageSubtitle = 'Edit official municipality references, geographic codes, and council member entries';
@@ -12,13 +10,13 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock current details
+
 $barangay = [
     'code' => 'BRGY-001',
     'name' => 'Barangay Juan',
-    'municipality_id' => '1', // References Municipality table
-    'province_id' => '1',     // References State / Province table
-    'country_id' => '1',      // References Country table
+    'municipality_id' => '1', 
+    'province_id' => '1',     
+    'country_id' => '1',      
     'population' => '1482',
 ];
 
@@ -42,7 +40,7 @@ if (!isset($templateRendered)) {
 
 <form action="<?= page_url('/references/barangay/edit') ?>" method="POST" class="space-y-6">
 
-    <!-- Section 1: Geographic & Master Metadata -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Geographic & Reference Settings</h2>
         <div class="form-row">
@@ -87,7 +85,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Section 2: Council Setup Section -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Sangguniang Barangay Council Entries</h2>
         <div class="space-y-4">
@@ -132,7 +130,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Actions -->
+    
     <div class="form-actions bg-white border border-slate-200 rounded-lg p-4 flex items-center justify-end gap-2">
         <button type="submit" class="btn btn-primary">Save Settings</button>
         <a href="<?= page_url('/references/barangay') ?>" class="btn btn-secondary">Cancel</a>

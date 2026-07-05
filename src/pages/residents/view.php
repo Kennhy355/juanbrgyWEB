@@ -1,7 +1,5 @@
 <?php
-/**
- * Resident View Profile Page
- */
+
 
 $id = trim($_GET['id'] ?? 'RES-2026-0001');
 
@@ -13,7 +11,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock database select matching the ID
+
 $resident = [
     'id' => $id,
     'first_name' => 'Maria',
@@ -38,7 +36,7 @@ $resident = [
     'updated_by' => 'Admin Jose'
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/residents/edit?id=' . e($id)) ?>" class="btn btn-primary">
@@ -61,7 +59,7 @@ if (!isset($templateRendered)) {
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-    <!-- Profile Summary Widget -->
+    
     <div class="lg:col-span-1 space-y-6">
         <div class="bg-white border border-slate-200 rounded-lg p-5 text-center">
             <div class="w-24 h-24 rounded-full bg-gov-100 text-gov-700 flex items-center justify-center text-3xl font-bold mx-auto mb-4 border border-gov-200">
@@ -94,9 +92,9 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Profile Details Tabs Content -->
+    
     <div class="lg:col-span-2 space-y-6">
-        <!-- Personal Info Section -->
+        
         <div class="bg-white border border-slate-200 rounded-lg p-5">
             <h3 class="font-semibold text-slate-700 uppercase tracking-wide border-b border-slate-100 pb-2 mb-4">Personal Information</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3.5 gap-x-6 text-sm">
@@ -131,7 +129,7 @@ if (!isset($templateRendered)) {
             </div>
         </div>
 
-        <!-- Address Info Section -->
+        
         <div class="bg-white border border-slate-200 rounded-lg p-5">
             <h3 class="font-semibold text-slate-700 uppercase tracking-wide border-b border-slate-100 pb-2 mb-4">Residential Address</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3.5 gap-x-6 text-sm">
@@ -154,7 +152,7 @@ if (!isset($templateRendered)) {
             </div>
         </div>
 
-        <!-- Communication Info Section -->
+        
         <div class="bg-white border border-slate-200 rounded-lg p-5">
             <h3 class="font-semibold text-slate-700 uppercase tracking-wide border-b border-slate-100 pb-2 mb-4">Communication Details</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3.5 gap-x-6 text-sm">
@@ -173,7 +171,7 @@ if (!isset($templateRendered)) {
             </div>
         </div>
 
-        <!-- Remarks Section -->
+        
         <div class="bg-white border border-slate-200 rounded-lg p-5">
             <h3 class="font-semibold text-slate-700 uppercase tracking-wide border-b border-slate-100 pb-2 mb-3">Remarks & History Notes</h3>
             <p class="text-sm text-slate-600 leading-relaxed"><?= nl2br(e($resident['notes'])) ?></p>

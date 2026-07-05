@@ -1,12 +1,10 @@
 <?php
-/**
- * Login Page
- */
+
 
 $pageTitle = 'Login';
 $contentFile = __FILE__;
 
-// Handle form action (mock response)
+
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
@@ -19,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// If this file is executed directly (not included), wrap it with the template.
+
 if (!isset($templateRendered)) {
     include __DIR__ . '/../../templates/auth.php';
     exit;

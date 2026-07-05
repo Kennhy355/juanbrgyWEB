@@ -1,7 +1,5 @@
 <?php
-/**
- * Country Reference List Page
- */
+
 
 $pageTitle = 'Country Master File';
 $pageSubtitle = 'Manage country registries for foreign nationalities and demographic logs';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock country list
+
 $countries = [
     ['code' => 'CTR-PH', 'name' => 'Philippines', 'iso' => 'PH / PHL', 'status' => 'Active'],
     ['code' => 'CTR-US', 'name' => 'United States of America', 'iso' => 'US / USA', 'status' => 'Active'],
@@ -19,7 +17,7 @@ $countries = [
     ['code' => 'CTR-CN', 'name' => 'China', 'iso' => 'CN / CHN', 'status' => 'Active'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/country/edit') ?>" class="btn btn-primary">

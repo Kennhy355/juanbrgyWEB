@@ -1,7 +1,5 @@
 <?php
-/**
- * Customized Report Menu Set-up Form Page
- */
+
 
 $id = trim($_GET['id'] ?? '');
 $isEdit = $id !== '';
@@ -15,7 +13,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock configuration options
+
 $template = [
     'name' => '',
     'desc' => '',
@@ -63,7 +61,7 @@ if (!isset($templateRendered)) {
 
 <form action="<?= page_url($isEdit ? '/reports/custom/edit?id=' . e($id) : '/reports/custom/create') ?>" method="POST" class="space-y-6">
 
-    <!-- Section 1: Template Metadata -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Template Metadata</h2>
         <div class="form-row">
@@ -85,7 +83,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Section 2: Query Model configuration -->
+    
     <div class="form-section">
         <h2 class="form-section-title">Query Parameters</h2>
         <div class="form-row">
@@ -161,7 +159,7 @@ if (!isset($templateRendered)) {
         </div>
     </div>
 
-    <!-- Actions -->
+    
     <div class="form-actions bg-white border border-slate-200 rounded-lg p-4 flex items-center justify-end gap-2">
         <button type="submit" class="btn btn-primary">Save Template Settings</button>
         <a href="<?= page_url('/reports/custom') ?>" class="btn btn-secondary">Cancel</a>

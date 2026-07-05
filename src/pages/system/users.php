@@ -1,7 +1,5 @@
 <?php
-/**
- * User Maintenance Page
- */
+
 
 $pageTitle = 'User Maintenance';
 $pageSubtitle = 'Create, update, and manage accounts and access logs for system users';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock user accounts list
+
 $usersList = [
     ['id' => 1, 'username' => 'admin', 'name' => 'Juan Dela Cruz', 'role' => 'Administrator', 'email' => 'admin@juanbrgy.gov.ph', 'last_login' => '2026-06-03 21:05', 'status' => 'Active'],
     ['id' => 2, 'username' => 'sec_ramos', 'name' => 'Fidel Ramos', 'role' => 'Secretary Desk Officer', 'email' => 'sec.ramos@juanbrgy.gov.ph', 'last_login' => '2026-06-03 18:22', 'status' => 'Active'],
@@ -19,7 +17,7 @@ $usersList = [
     ['id' => 4, 'username' => 'visitor1', 'name' => 'Mock Visitor Account', 'role' => 'Read-Only Viewer', 'email' => 'guest@gmail.com', 'last_login' => '2026-05-20 14:02', 'status' => 'Inactive'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/system/users/edit') ?>" class="btn btn-primary">

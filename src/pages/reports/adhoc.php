@@ -1,7 +1,5 @@
 <?php
-/**
- * Ad-hoc Report Generator Page
- */
+
 
 $pageTitle = 'Ad-hoc Report Generator';
 $pageSubtitle = 'Create flexible search queries across the database with configurable exports';
@@ -11,13 +9,13 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Handle request to show mock results
+
 $showResults = false;
 $filtersApplied = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_GET['generate'])) {
     $showResults = true;
     
-    // Track filters applied for UI feedback
+    
     if (!empty($_POST['gender'])) $filtersApplied[] = 'Gender: ' . e($_POST['gender']);
     if (!empty($_POST['purok'])) $filtersApplied[] = 'Purok: ' . e($_POST['purok']);
     if (!empty($_POST['civil_status'])) $filtersApplied[] = 'Civil: ' . e($_POST['civil_status']);
@@ -26,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_GET['generate'])) {
     }
 }
 
-// Mock results
+
 $results = [
     ['id' => 'RES-2026-0001', 'name' => 'Santos, Maria A.', 'gender' => 'Female', 'age' => 28, 'civil' => 'Single', 'purok' => 'Purok 1', 'contact' => '0917-123-4567'],
     ['id' => 'RES-2026-0006', 'name' => 'Aquino, Corazon F.', 'gender' => 'Female', 'age' => 71, 'civil' => 'Widowed', 'purok' => 'Purok 1', 'contact' => '0919-333-4444'],
@@ -39,7 +37,7 @@ if (!isset($templateRendered)) {
 }
 ?>
 
-<!-- Query Form -->
+
 <div class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
     <form action="<?= page_url('/reports/adhoc?generate=1') ?>" method="POST" class="space-y-4">
         <h3 class="text-sm font-semibold text-slate-800 uppercase tracking-wide border-b border-slate-100 pb-2 mb-4">Ad-hoc Filter Parameters</h3>
@@ -107,7 +105,7 @@ if (!isset($templateRendered)) {
     </form>
 </div>
 
-<!-- Results Area -->
+
 <?php if ($showResults): ?>
     <div class="data-table-wrapper">
         <div class="data-table-toolbar flex justify-between items-center p-3 bg-slate-50 border-b border-slate-200">

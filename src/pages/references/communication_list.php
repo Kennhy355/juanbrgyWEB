@@ -1,7 +1,5 @@
 <?php
-/**
- * Ways of Communication Reference List Page
- */
+
 
 $pageTitle = 'Ways of Communication Master';
 $pageSubtitle = 'Manage communication channels (SMS, Email, Written) used for notification delivery';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock list
+
 $channels = [
     ['code' => 'COM-SMS', 'name' => 'Mobile / SMS Text', 'gateway' => 'SMS Gateway V2', 'status' => 'Active'],
     ['code' => 'COM-MAIL', 'name' => 'Email Address Notification', 'gateway' => 'SMTP Mail Relay Server', 'status' => 'Active'],
@@ -19,7 +17,7 @@ $channels = [
     ['code' => 'COM-TEL', 'name' => 'Landline / Phone Call', 'gateway' => 'Voice Operator', 'status' => 'Inactive'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/communication/edit') ?>" class="btn btn-primary">

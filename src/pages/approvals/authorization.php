@@ -1,7 +1,5 @@
 <?php
-/**
- * Admin Request Authorization Page (Queue View)
- */
+
 
 $pageTitle = 'Admin Request Authorization';
 $pageSubtitle = 'Review, approve, hold, or reject pending document requests from residents';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock authorization queue
+
 $queue = [
     ['id' => 'REQ-2026-009', 'resident' => 'Maria Santos', 'type' => 'Barangay Clearance', 'date' => '2026-06-03 10:14', 'purpose' => 'Employment requirement', 'status' => 'Pending'],
     ['id' => 'REQ-2026-008', 'resident' => 'Juan Dela Cruz', 'type' => 'Certificate of Indigency', 'date' => '2026-06-03 09:30', 'purpose' => 'Medical financial aid', 'status' => 'Pending'],

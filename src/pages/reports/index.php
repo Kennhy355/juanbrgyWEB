@@ -1,7 +1,5 @@
 <?php
-/**
- * Barangay Reports List Page
- */
+
 
 $pageTitle = 'Barangay Reports';
 $pageSubtitle = 'Access and download official barangay reports, statistical lists, and summaries';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock list of reports
+
 $reports = [
     ['code' => 'REP-DEMO-01', 'name' => 'Barangay Demographics Summary', 'category' => 'Demographics', 'desc' => 'Total resident count by Purok, age groups, and gender breakdown.'],
     ['code' => 'REP-VOTE-02', 'name' => 'Registered Voter Registry', 'category' => 'Electoral', 'desc' => 'List of registered voters grouped by Purok / Zone.'],

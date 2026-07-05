@@ -1,7 +1,5 @@
 <?php
-/**
- * Nationality Reference List Page
- */
+
 
 $pageTitle = 'Nationality Master File';
 $pageSubtitle = 'Manage registered nationality lookup classifications for resident records';
@@ -11,7 +9,7 @@ $breadcrumbs = [
 ];
 $contentFile = __FILE__;
 
-// Mock list
+
 $nationalities = [
     ['code' => 'NAT-PH', 'name' => 'Filipino', 'notes' => 'Default local citizenship status.', 'status' => 'Active'],
     ['code' => 'NAT-US', 'name' => 'American', 'notes' => 'United States citizens.', 'status' => 'Active'],
@@ -19,7 +17,7 @@ $nationalities = [
     ['code' => 'NAT-CN', 'name' => 'Chinese', 'notes' => 'Chinese nationality records.', 'status' => 'Active'],
 ];
 
-// Set header actions
+
 ob_start();
 ?>
 <a href="<?= page_url('/references/nationality/edit') ?>" class="btn btn-primary">

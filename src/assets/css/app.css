@@ -1,13 +1,10 @@
-/* ============================================
-   juanbrgyWEB — Barangay Management System
-   Design System Stylesheet
-   ============================================ */
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ----- Base Reset ----- */
+
 @layer base {
     * {
         margin: 0;
@@ -52,10 +49,10 @@
     }
 }
 
-/* ----- Layout ----- */
+
 @layer components {
 
-    /* Top Navigation */
+    
     .topnav {
         @apply fixed top-0 left-0 right-0 z-50 h-14 bg-gov-600 text-white flex items-center justify-between px-4;
     }
@@ -72,7 +69,7 @@
         @apply flex items-center gap-1.5 px-3 py-1.5 rounded text-sm hover:bg-gov-500 transition-colors;
     }
 
-    /* Sidebar */
+    
     .sidebar {
         @apply fixed top-14 left-0 bottom-0 bg-sidebar overflow-y-auto z-40;
         width: 16.5rem;
@@ -106,13 +103,13 @@
         @apply border-t border-slate-700 mx-3 my-1;
     }
 
-    /* Main Content */
+    
     .main-content {
         @apply mt-14 min-h-[calc(100vh-3.5rem)] p-6;
         margin-left: 16.5rem;
     }
 
-    /* Auth Layout (no sidebar) */
+    
     .auth-layout {
         @apply min-h-screen flex items-center justify-center bg-slate-100;
     }
@@ -121,7 +118,7 @@
         @apply w-full max-w-sm bg-white border border-slate-200 rounded-lg p-8;
     }
 
-    /* Page Header */
+    
     .page-header {
         @apply flex items-center justify-between mb-5;
     }
@@ -134,7 +131,7 @@
         @apply text-sm text-slate-500 mt-0.5;
     }
 
-    /* Breadcrumb */
+    
     .breadcrumb {
         @apply flex items-center gap-1.5 text-xs text-slate-500 mb-4;
     }
@@ -148,7 +145,7 @@
     }
 }
 
-/* ----- Data Tables ----- */
+
 @layer components {
     .data-table-wrapper {
         @apply bg-white border border-slate-200 rounded-lg overflow-hidden;
@@ -187,7 +184,7 @@
     }
 }
 
-/* ----- Buttons ----- */
+
 @layer components {
     .btn {
         @apply inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded border transition-colors cursor-pointer;
@@ -230,7 +227,7 @@
     }
 }
 
-/* ----- Forms ----- */
+
 @layer components {
     .form-group {
         @apply mb-4;
@@ -291,7 +288,7 @@
     }
 }
 
-/* ----- Badges & Status ----- */
+
 @layer components {
     .badge {
         @apply inline-flex items-center px-2 py-0.5 text-2xs font-semibold rounded-full;
@@ -322,7 +319,7 @@
     }
 }
 
-/* ----- Alerts ----- */
+
 @layer components {
     .alert {
         @apply flex items-start gap-2 px-4 py-3 text-sm rounded border mb-4;
@@ -349,7 +346,7 @@
     }
 }
 
-/* ----- Cards & Stat Boxes ----- */
+
 @layer components {
     .stat-card {
         @apply bg-white border border-slate-200 rounded px-3.5 py-5 flex flex-col justify-center;
@@ -364,7 +361,7 @@
     }
 }
 
-/* ----- Modal ----- */
+
 @layer components {
     .modal-overlay {
         @apply fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4;
@@ -391,7 +388,7 @@
     }
 }
 
-/* ----- Pagination ----- */
+
 @layer components {
     .pagination {
         @apply flex items-center gap-1;
@@ -410,7 +407,7 @@
     }
 }
 
-/* ----- Search Input ----- */
+
 @layer components {
     .search-input {
         @apply pl-8 pr-3 py-1.5 text-sm border border-slate-300 rounded bg-white text-slate-700 placeholder-slate-400 w-56;
@@ -426,7 +423,7 @@
     }
 }
 
-/* ----- Utility ----- */
+
 @layer utilities {
     .scrollbar-thin {
         scrollbar-width: thin;
@@ -447,7 +444,7 @@
     }
 }
 
-/* ----- Footer ----- */
+
 @layer components {
     .site-footer {
         @apply text-xs text-slate-400 text-center py-3 border-t border-slate-200 bg-white mt-auto;
