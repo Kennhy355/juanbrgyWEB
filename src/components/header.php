@@ -3,7 +3,7 @@
 $user = current_user();
 ?>
 <header class="topnav">
-    <div class="topnav-brand">
+    <a href="<?= page_url('/') ?>" class="topnav-brand hover:opacity-80 transition-opacity">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 21h18"/>
             <path d="M5 21V7l7-4 7 4v14"/>
@@ -15,7 +15,7 @@ $user = current_user();
             <div class="text-sm font-bold leading-tight">Barangay Juan</div>
             <div class="text-2xs opacity-70 font-normal">Management Information System</div>
         </div>
-    </div>
+    </a>
 
     <div class="topnav-actions">
         <button class="topnav-btn" title="Notifications">

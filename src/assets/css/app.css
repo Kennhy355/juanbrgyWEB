@@ -1,5 +1,3 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,7 +50,7 @@
 
 @layer components {
 
-    
+
     .topnav {
         @apply fixed top-0 left-0 right-0 z-50 h-14 bg-gov-600 text-white flex items-center justify-between px-4;
     }
@@ -69,7 +67,7 @@
         @apply flex items-center gap-1.5 px-3 py-1.5 rounded text-sm hover:bg-gov-500 transition-colors;
     }
 
-    
+
     .sidebar {
         @apply fixed top-14 left-0 bottom-0 bg-sidebar overflow-y-auto z-40;
         width: 16.5rem;
@@ -104,13 +102,13 @@
     }
 
 
-    
+
     .main-content {
         @apply mt-14 min-h-[calc(100vh-3.5rem)] p-6;
         margin-left: 16.5rem;
     }
 
-    
+
     .auth-layout {
         @apply min-h-screen flex items-center justify-center bg-slate-100;
     }
@@ -119,7 +117,7 @@
         @apply w-full max-w-sm bg-white border border-slate-200 rounded-lg p-8;
     }
 
-    
+
     .page-header {
         @apply flex items-center justify-between mb-5;
     }
@@ -132,7 +130,7 @@
         @apply text-sm text-slate-500 mt-0.5;
     }
 
-    
+
     .breadcrumb {
         @apply flex items-center gap-1.5 text-xs text-slate-500 mb-4;
     }
@@ -295,28 +293,25 @@
         @apply inline-flex items-center px-2 py-0.5 text-2xs font-semibold rounded-full;
     }
 
-    .badge-active {
-        @apply bg-success-100 text-success-700;
+    .badge-active,
+    .badge-approved {
+        @apply bg-success-600 text-white;
     }
 
     .badge-inactive {
-        @apply bg-slate-100 text-slate-600;
+        @apply bg-white text-slate-900 border border-slate-200;
     }
 
     .badge-pending {
-        @apply bg-warning-100 text-warning-700;
-    }
-
-    .badge-approved {
-        @apply bg-success-100 text-success-700;
+        @apply bg-warning-600 text-white;
     }
 
     .badge-rejected {
-        @apply bg-danger-100 text-danger-700;
+        @apply bg-danger-600 text-white;
     }
 
     .badge-info {
-        @apply bg-accent-100 text-accent-700;
+        @apply bg-accent-600 text-white;
     }
 }
 
@@ -500,4 +495,4 @@
 .sidebar-links-group.collapsed {
     max-height: 0;
     opacity: 0;
-}
+}

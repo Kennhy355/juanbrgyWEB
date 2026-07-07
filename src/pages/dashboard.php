@@ -18,7 +18,7 @@ $messages = [
     ['date' => '2026-06-03', 'from' => 'Hon. Jose Rizal (Captain)', 'subject' => 'Monthly Sangguniang Barangay Council Assembly', 'status' => 'Urgent'],
     ['date' => '2026-06-02', 'from' => 'DOH Barangay Health Center', 'subject' => 'Free Immunization & Health Checkup Schedule', 'status' => 'Info'],
     ['date' => '2026-06-01', 'from' => 'Purok 1 Leader', 'subject' => 'Community Clean-Up Drive this Saturday', 'status' => 'Important'],
-    ['date' => '2026-05-30', 'from' => 'Barangay Secretary', 'subject' => 'New Guidelines for Cedula (Community Tax Certificate) Issuance', 'status' => 'Standard'],
+    ['date' => '2026-05-30', 'from' => 'Barangay Secretary', 'subject' => 'New Guidelines for Cedula (Community Tax Certificate) Issuance', 'status' => 'Approved'],
     ['date' => '2026-05-28', 'from' => 'KP Desk Officer', 'subject' => 'Katarungang Pambarangay Mediation Seminar', 'status' => 'Standard'],
     ['date' => '2026-05-25', 'from' => 'Hon. Jose Rizal (Captain)', 'subject' => 'Distribution of Relief & Calamity Assistance Kits', 'status' => 'Important'],
     ['date' => '2026-05-22', 'from' => 'Barangay Treasurer', 'subject' => 'Submission of Financial Reports for Q2 2026', 'status' => 'Important'],
@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     if ($msg['status'] === 'Urgent') $badge = 'badge-rejected';
                                     if ($msg['status'] === 'Important') $badge = 'badge-pending';
                                     if ($msg['status'] === 'Info') $badge = 'badge-info';
+                                    if ($msg['status'] === 'Approved') $badge = 'badge-approved';
                                 ?>
                                 <span class="badge <?= $badge ?>"><?= e($msg['status']) ?></span>
                             </td>
